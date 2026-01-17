@@ -1,0 +1,15 @@
+﻿<Project Sdk="Microsoft.NET.Sdk">
+
+  <PropertyGroup>
+    <TargetFramework>net10.0</TargetFramework>
+    <ImplicitUsings>enable</ImplicitUsings>
+    <Nullable>enable</Nullable>
+  </PropertyGroup>
+
+  <ItemGroup>
+    <ProjectReference Include="..\BoilerPlateNetCore10.Application\BoilerPlateNetCore10.Application.csproj" />
+    <ProjectReference Include="..\BoilerPlateNetCore10.Domain\BoilerPlateNetCore10.Domain.csproj" />
+    <ProjectReference Include="..\BoilerPlateNetCore10.Infra.Data\BoilerPlateNetCore10.Infra.Data.csproj" />
+  </ItemGroup>
+
+</Project>

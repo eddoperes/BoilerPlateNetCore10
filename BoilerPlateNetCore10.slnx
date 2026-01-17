@@ -1,0 +1,7 @@
+<Solution>
+  <Project Path="BoilerPlateNetCore10.API/BoilerPlateNetCore10.API.csproj" />
+  <Project Path="BoilerPlateNetCore10.Application/BoilerPlateNetCore10.Application.csproj" Id="36dafa52-8968-42b8-be6c-6202c48a7687" />
+  <Project Path="BoilerPlateNetCore10.Domain/BoilerPlateNetCore10.Domain.csproj" Id="8f1e3a03-af6c-49b3-9ee5-6be8f4e72bf1" />
+  <Project Path="BoilerPlateNetCore10.Infra.Data/BoilerPlateNetCore10.Infra.Data.csproj" Id="d6389edc-f390-4994-a0da-7cf1ca49b74a" />
+  <Project Path="BoilerPlateNetCore10.Infra.IoC/BoilerPlateNetCore10.Infra.IoC.csproj" Id="b8b11814-2fb7-455d-ace0-c0c57df51c3e" />
+</Solution>
