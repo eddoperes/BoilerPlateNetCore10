@@ -7,5 +7,12 @@ namespace BoilerPlateNetCore10.Domain.Entities
 {
     public abstract class Person: Entity
     {
+
+        public string Name { get; protected set; } = string.Empty;
+        
+
+
     }
+
+
 }

@@ -5,7 +5,7 @@ using System.Text;
 
 namespace BoilerPlateNetCore10.Domain.Entities
 {
-    public class Employee: Entity
+    public class Employee: Person
     {
     }
 }
