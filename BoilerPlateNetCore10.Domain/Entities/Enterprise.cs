@@ -9,7 +9,15 @@ namespace BoilerPlateNetCore10.Domain.Entities
     public class Enterprise: Entity
     {
 
-        public CNPJ CNPJ { get; protected set; } = new CNPJ();
+        public Enterprise(string name, CNPJ cnpj)
+        {
+            Name = name;
+            CNPJ = cnpj;
+        }
+
+        public string Name { get; protected set; }
+
+        public CNPJ CNPJ { get; protected set; }
 
     }
 }

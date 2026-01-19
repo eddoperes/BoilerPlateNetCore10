@@ -4,8 +4,6 @@ using BoilerPlateNetCore10.Application.Services.Super;
 using BoilerPlateNetCore10.Domain.Entities;
 using BoilerPlateNetCore10.Domain.Interfaces;
 using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BoilerPlateNetCore10.Application.Services
 {
