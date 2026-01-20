@@ -5,7 +5,7 @@ using Microsoft.EntityFrameworkCore;
 
 namespace BoilerPlateNetCore10.Infra.Data.Repository.Super
 {
-    public class GenericRepository<T> : IRepository<T> where T : Entity
+    public class GenericRepository<T> : IGenericRepository<T> where T : Entity
     {
 
         protected readonly ApplicationDbContext _applicationDbContext;

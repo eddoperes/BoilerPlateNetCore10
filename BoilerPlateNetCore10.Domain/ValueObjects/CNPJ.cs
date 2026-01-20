@@ -1,15 +1,11 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
-using System;
-using System.Collections.Generic;
-using System.IO;
-using System.Text;
 
 namespace BoilerPlateNetCore10.Domain.ValueObjects
 {
     public class CNPJ
     {
 
-        public static string InvalidCNPJErrorMessage = "Invalid CNPJ. CNPJ number did not agree to specification.";
+        public static readonly string InvalidCNPJErrorMessage = "Invalid CNPJ. CNPJ number did not agree to specification.";
 
         private static bool IsCNPJ(string cnpj)
         {

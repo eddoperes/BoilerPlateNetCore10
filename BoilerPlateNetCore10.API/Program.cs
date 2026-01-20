@@ -1,9 +1,12 @@
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
+using BoilerPlateNetCore10.Infra.IoC;
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
+
+builder.Services.AddInfrastructureAPI(builder.Configuration);
 
 // Add services to the container.
 

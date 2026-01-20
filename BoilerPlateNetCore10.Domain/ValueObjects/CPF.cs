@@ -1,17 +1,12 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BoilerPlateNetCore10.Domain.ValueObjects
 {
 
-
-
     public class CPF
     {
 
-        public static string InvalidCPFErrorMessage = "Invalid CPF. CPF number did not agree to specification.";
+        public static readonly string InvalidCPFErrorMessage = "Invalid CPF. CPF number did not agree to specification.";
 
         private static bool IsCPF(string cpf)
         {

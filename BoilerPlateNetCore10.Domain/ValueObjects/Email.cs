@@ -1,14 +1,11 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
-using System;
-using System.Collections.Generic;
-using System.Text;
 using System.Text.RegularExpressions;
 
 namespace BoilerPlateNetCore10.Domain.ValueObjects
 {
     public class Email
     {
-        public static string InvalidEmailErrorMessage = "Invalid Email. Email is not well formed.";
+        public static readonly string InvalidEmailErrorMessage = "Invalid Email. Email is not well formed.";
 
         public static bool IsEmail(string email)
         {

@@ -11,11 +11,11 @@ namespace BoilerPlateNetCore10.Application.Services.Super
     public class CrudService<T, G> : ICrudService<T> where T : class where G : Entity
     {
 
-        private readonly IRepository<G> _repository;
+        private readonly IGenericRepository<G> _repository;
 
-        public CrudService(IRepository<G> repository)
+        public CrudService(IGenericRepository<G> repository)
         {
-            _repository = repository ?? throw new ArgumentNullException(nameof(IRepository<G>));
+            _repository = repository ?? throw new ArgumentNullException(nameof(IGenericRepository<G>));
         }
 
         public async Task<IEnumerable<T>> GetAllAsync()

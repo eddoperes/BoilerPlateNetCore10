@@ -3,7 +3,7 @@ using BoilerPlateNetCore10.Application.Interfaces.Super;
 
 namespace BoilerPlateNetCore10.Application.Interfaces
 {
-    public interface IEnterpriseService : ICrudService<EnterpriseDTO>
+    public interface IEmployeeService : ICrudService<EmployeeDTO>
     {
     }
 }

@@ -1,21 +1,19 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
-using System;
 using System.Collections.Generic;
-using System.Text;
 
 namespace BoilerPlateNetCore10.Domain.ValueObjects
 {
     public class Address
     {
 
-        public static string EmptyStreetErrorMessage = "Invalid street. Street must be informed.";
-        public static string NumberNotGreaterThanZeroErrorMessage = "Invalid number. Number must be greater than zero.";
-        public static string EmptyNeighborhoodErrorMessage = "Invalid neighborhood. Neighborhood must be informed.";
-        public static string EmptyZipCodeErrorMessage = "Invalid zip code. Zip code must be informed.";
-        public static string ZipCodeNotNumericErrorMessage = "Invalid zip code. Zip code must be numeric.";
-        public static string ZipCodeLenghtErrorMessage = "Invalid zip code. Zip code must have eight characters.";
-        public static string EmptyCityErrorMessage = "Invalid city. City must be informed.";
-        public static string InvalidStateErrorMessage = "Invalid state. State must be a valid Brazilian state abbreviation.";
+        public static readonly string EmptyStreetErrorMessage = "Invalid street. Street must be informed.";
+        public static readonly string NumberNotGreaterThanZeroErrorMessage = "Invalid number. Number must be greater than zero.";
+        public static readonly string EmptyNeighborhoodErrorMessage = "Invalid neighborhood. Neighborhood must be informed.";
+        public static readonly string EmptyZipCodeErrorMessage = "Invalid zip code. Zip code must be informed.";
+        public static readonly string ZipCodeNotNumericErrorMessage = "Invalid zip code. Zip code must be numeric.";
+        public static readonly string ZipCodeLenghtErrorMessage = "Invalid zip code. Zip code must have eight characters.";
+        public static readonly string EmptyCityErrorMessage = "Invalid city. City must be informed.";
+        public static readonly string InvalidStateErrorMessage = "Invalid state. State must be a valid Brazilian state abbreviation.";
 
         private static readonly Dictionary<string, string> BrazilianStates = new Dictionary<string, string>{
             { "AC", "Acre" },

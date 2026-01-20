@@ -6,7 +6,7 @@ using System.Threading.Tasks;
 
 namespace BoilerPlateNetCore10.Domain.Interfaces.Super
 {
-    public interface IRepository<T> where T : Entity
+    public interface IGenericRepository<T> where T : Entity
     {
 
         Task<IEnumerable<T>> GetAllAsync();
