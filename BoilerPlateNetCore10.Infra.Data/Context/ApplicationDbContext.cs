@@ -12,6 +12,21 @@ namespace BoilerPlateNetCore10.Infra.Data.Context
 
         protected override void OnModelCreating(ModelBuilder modelBuilder)
         {
+            modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
+
+            base.OnModelCreating(modelBuilder);
+
+            foreach (var foreignKey in modelBuilder.Model.GetEntityTypes()
+                .SelectMany(t => t.GetForeignKeys())
+                .Where(fk => !fk.IsOwnership && fk.DeleteBehavior == DeleteBehavior.Cascade))
+            {
+                foreignKey.DeleteBehavior = DeleteBehavior.Restrict; // Set your desired default
+            }            
+        }        
+
+        /*
+        protected override void OnModelCreating(ModelBuilder modelBuilder)
+        {
 
             //remove delete cascade behaviour
             var cascadeFKs = modelBuilder.Model.GetEntityTypes()
@@ -23,6 +38,7 @@ namespace BoilerPlateNetCore10.Infra.Data.Context
             base.OnModelCreating(modelBuilder);
             modelBuilder.ApplyConfigurationsFromAssembly(typeof(ApplicationDbContext).Assembly);
         }
+        */
 
     }
 }

@@ -6,7 +6,7 @@ using System.Numerics;
 
 namespace BoilerPlateNetCore10.Domain.Entities
 {
-    /*
+    
     public class Customer : Person
     {
 
@@ -15,18 +15,18 @@ namespace BoilerPlateNetCore10.Domain.Entities
         private Customer() { 
         }
 
-        public Customer(string name, CPF cpf, Email email, Phone phone, Address address, DateTime since, long enterpriseId) : base(name, cpf, email, phone, address)
+        public Customer(string name, CPF cpf, Email email, Phone phone, Address address, DateTime since, long supplierId) : base(name, cpf, email, phone, address)
         {
             Validate(since);
             Since = since;
-            EnterpriseId = enterpriseId;
+            SupplierId = supplierId;
         }
 
-        public Customer(long id, string name, CPF cpf, Email email, Phone phone, Address address, DateTime since, long enterpriseId) : base(id, name, cpf, email, phone, address)
+        public Customer(long id, string name, CPF cpf, Email email, Phone phone, Address address, DateTime since, long supplierId) : base(id, name, cpf, email, phone, address)
         {
             Validate(since);
             Since = since;
-            EnterpriseId = enterpriseId;
+            SupplierId = supplierId;
         }
 
         private void Validate(DateTime since)
@@ -36,10 +36,10 @@ namespace BoilerPlateNetCore10.Domain.Entities
 
         public DateTime Since { get; private set; }
 
-        public long EnterpriseId { get; private set; }
+        public long SupplierId { get; private set; }
 
-        public Enterprise? Enterprise { get; private set; }
+        public Enterprise? Supplier { get; private set; }
 
     }
-    */
+    
 }

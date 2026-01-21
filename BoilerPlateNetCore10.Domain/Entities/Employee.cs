@@ -4,7 +4,7 @@ using System;
 
 namespace BoilerPlateNetCore10.Domain.Entities
 {
-    /*
+    
     public class Employee : Person
     {
         
@@ -13,20 +13,20 @@ namespace BoilerPlateNetCore10.Domain.Entities
         private Employee() {
         }
 
-        public Employee(string name, CPF cpf, Email email, Phone phone, Address address, DateTime admission, DateTime? resignation, long enterpriseId) : base(name, cpf, email, phone, address)
+        public Employee(string name, CPF cpf, Email email, Phone phone, Address address, DateTime admission, DateTime? resignation, long employerId) : base(name, cpf, email, phone, address)
         {
             Validate(admission, resignation);
             Admission = admission;
             Resignation = resignation;
-            EnterpriseId = enterpriseId;
+            EmployerId = employerId;
         }
 
-        public Employee(long id, string name, CPF cpf, Email email, Phone phone, Address address, DateTime admission, DateTime? resignation, long enterpriseId) : base(id, name, cpf, email, phone, address)
+        public Employee(long id, string name, CPF cpf, Email email, Phone phone, Address address, DateTime admission, DateTime? resignation, long employerId) : base(id, name, cpf, email, phone, address)
         {
             Validate(admission, resignation);
             Admission = admission;
             Resignation = resignation;
-            EnterpriseId = enterpriseId;
+            EmployerId = employerId;
         }
 
         private void Validate(DateTime admission, DateTime? resignation)
@@ -39,10 +39,10 @@ namespace BoilerPlateNetCore10.Domain.Entities
 
         public DateTime? Resignation { get; private set; }
 
-        public long EnterpriseId { get; private set; }
+        public long EmployerId { get; private set; }
 
-        public Enterprise? Enterprise { get; private set; }
+        public Enterprise? Employer { get; private set; }
 
     }
-    */
+    
 }

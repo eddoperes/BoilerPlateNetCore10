@@ -17,7 +17,7 @@ namespace BoilerPlateNetCore10.Infra.IoC
         {
 
             services.AddDbContext<ApplicationDbContext>(
-                options => options.UseMySQL(configuration.GetConnectionString("DefaultConnection")!,
+                options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
                 b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
 
             //services.AddApiVersioning();

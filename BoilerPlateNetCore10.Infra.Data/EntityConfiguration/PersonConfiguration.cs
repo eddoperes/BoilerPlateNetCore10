@@ -1,13 +1,10 @@
 ﻿using BoilerPlateNetCore10.Domain.Entities;
 using Microsoft.EntityFrameworkCore;
 using Microsoft.EntityFrameworkCore.Metadata.Builders;
-using System;
-using System.Collections.Generic;
-using System.Text;
 
 namespace BoilerPlateNetCore10.Infra.Data.EntityConfiguration
 {
-    /*
+    
     public class PersonConfiguration : IEntityTypeConfiguration<Person>
     {
 
@@ -28,5 +25,5 @@ namespace BoilerPlateNetCore10.Infra.Data.EntityConfiguration
         }
 
     }
-    */
+    
 }
