@@ -1,9 +1,6 @@
 ﻿using BoilerPlateNetCore10.Domain.Entities.Super;
 using BoilerPlateNetCore10.Domain.Validation;
 using BoilerPlateNetCore10.Domain.ValueObjects;
-using System.Net;
-using System.Numerics;
-using System.Xml.Linq;
 
 namespace BoilerPlateNetCore10.Domain.Entities
 {
@@ -14,14 +11,8 @@ namespace BoilerPlateNetCore10.Domain.Entities
         public static readonly string InvalidIdErrorMessage = "Invalid id. Smaller than zero.";
         public static readonly string InvalidNameErrorMessage = "Invalid name. Name must be informed.";
 
-
         protected Person()
         {
-            Name = "";
-            CPF = new CPF("");
-            Email = new Email("");
-            Phone = new Phone("");
-            Address = new Address("", 0, "", "", "", "", "");
         }
 
         public Person(string name, CPF cpf, Email email, Phone phone, Address address)
@@ -52,15 +43,15 @@ namespace BoilerPlateNetCore10.Domain.Entities
             DomainExceptionValidation.When(name == string.Empty, InvalidNameErrorMessage);
         }
 
-        public string Name { get; protected set; } 
+        public string Name { get; protected set; } = "";
 
-        public CPF CPF { get; protected set; } 
+        public CPF CPF { get; protected set; } = new CPF();
 
-        public Email Email { get; protected set; }
+        public Email Email { get; protected set; } = new Email();
 
-        public Phone Phone { get; protected set; }
+        public Phone Phone { get; protected set; } = new Phone();
 
-        public Address Address { get; protected set; }
+        public Address Address { get; protected set; } = new Address();
 
     }
     

@@ -7,7 +7,7 @@ using System;
 
 namespace BoilerPlateNetCore10.Application.Services
 {
-    /*
+
     public class CustomerService : CrudService<CustomerDTO, Person>, ICustomerService
     {
 
@@ -19,5 +19,4 @@ namespace BoilerPlateNetCore10.Application.Services
         }
 
     }
-    */
 }

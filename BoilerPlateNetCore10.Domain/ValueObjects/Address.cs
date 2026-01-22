@@ -45,6 +45,10 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             { "TO", "Tocantins" }
         };
 
+        internal Address()
+        {
+        }
+
         public Address(string street, int number, string complement, string neighborhood, string zipCode, string city, string state)
         {
             DomainExceptionValidation.When(street == string.Empty, EmptyStreetErrorMessage);
@@ -65,12 +69,12 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             State = state;            
         }
 
-        public string Street { get; private set; }
+        public string Street { get; private set; } = "";
         public  int Number { get; private set; }
-        public  string Complement { get; private set; }
-        public string Neighborhood { get; private set; }
-        public string ZipCode { get; private set; }
-        public string City { get; private set; }
-        public string State { get; private set; }
+        public  string Complement { get; private set; } = "";
+        public string Neighborhood { get; private set; } = "";
+        public string ZipCode { get; private set; } = "";
+        public string City { get; private set; } = "";
+        public string State { get; private set; } = "";
     }
 }

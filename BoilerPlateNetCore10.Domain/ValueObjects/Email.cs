@@ -16,7 +16,11 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             string pattern = @"^[^@\s]+@[^@\s]+\.[^@\s]+$";
             return Regex.IsMatch(email, pattern);
         }
-      
+
+        internal Email()
+        {
+        }
+
         public Email(string address)
         {
             DomainExceptionValidation.When(!IsEmail(address), InvalidEmailErrorMessage);
@@ -24,7 +28,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             Address = address;
         }
 
-        public string Address { get; private set; }
+        public string Address { get; private set; } = "";
 
     }
 }

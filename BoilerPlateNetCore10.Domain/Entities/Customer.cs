@@ -1,8 +1,6 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
 using BoilerPlateNetCore10.Domain.ValueObjects;
 using System;
-using System.Net;
-using System.Numerics;
 
 namespace BoilerPlateNetCore10.Domain.Entities
 {
@@ -12,7 +10,7 @@ namespace BoilerPlateNetCore10.Domain.Entities
 
         public static readonly string InvalidSinceErrorMessage = "Invalid since. Since can not be a future date";
 
-        private Customer() { 
+        public Customer() { 
         }
 
         public Customer(string name, CPF cpf, Email email, Phone phone, Address address, DateTime since, long supplierId) : base(name, cpf, email, phone, address)

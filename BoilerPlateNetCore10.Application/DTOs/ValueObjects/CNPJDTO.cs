@@ -2,6 +2,6 @@
 {
     public class CNPJDTO
     {
-        public string Number { get; private set; } = string.Empty;
+        public string Number { get; set; } = string.Empty;
     }
 }

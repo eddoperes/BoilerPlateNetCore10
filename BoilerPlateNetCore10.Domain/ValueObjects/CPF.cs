@@ -50,6 +50,10 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             return cpf.EndsWith(digito);
         }
 
+        internal CPF()
+        {
+        }
+
         public CPF(string number)
         {
             DomainExceptionValidation.When(!IsCPF(number), InvalidCPFErrorMessage);
@@ -57,7 +61,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             Number = number;
         }
 
-        public string Number { get; private set; }
+        public string Number { get; private set; } = "";
 
     }
 }

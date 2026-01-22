@@ -1,12 +1,25 @@
+using BoilerPlateNetCore10.API;
+using BoilerPlateNetCore10.Infra.IoC;
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
-using BoilerPlateNetCore10.Infra.IoC;
+using Serilog;
+
 
 var builder = WebApplication.CreateBuilder(args);
 
 builder.Services.AddEndpointsApiExplorer();
 
 builder.Services.AddInfrastructureAPI(builder.Configuration);
+
+using var log = new LoggerConfiguration()
+    .WriteTo.File("logs/log-global-.txt", rollingInterval: RollingInterval.Day)
+    .CreateLogger();
+builder.Services.AddSingleton<Serilog.ILogger>(log);
+
+builder.Services.AddControllers(options =>
+{
+    options.Filters.Add(new CustomExceptionFilter(log));
+});
 
 // Add services to the container.
 
@@ -21,8 +34,7 @@ builder.Services.AddSwaggerGen(c =>
     {
         Title = "BoilerPlateNetCore10.API",
         Version = "v1",
-    });
-    /*
+    });    
     c.AddSecurityDefinition("Bearer", new OpenApiSecurityScheme
     {
         Name = "Authorization",
@@ -35,12 +47,12 @@ builder.Services.AddSwaggerGen(c =>
     c.AddSecurityRequirement(document => new OpenApiSecurityRequirement
     {
         [new OpenApiSecuritySchemeReference("bearer", document)] = []
-    });
-    */
-
+    });   
 });
 
 var app = builder.Build();
+
+app.UseExceptionHandler("/error");
 
 // Configure the HTTP request pipeline.
 if (app.Environment.IsDevelopment() || app.Environment.IsProduction())

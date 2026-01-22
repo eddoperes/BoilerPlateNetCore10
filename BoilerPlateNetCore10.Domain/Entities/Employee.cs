@@ -10,7 +10,7 @@ namespace BoilerPlateNetCore10.Domain.Entities
         
         public static readonly string InvalidResignationErrorMessage = "Invalid resignation. Resignation must be after admission.";
 
-        private Employee() {
+        public Employee() {
         }
 
         public Employee(string name, CPF cpf, Email email, Phone phone, Address address, DateTime admission, DateTime? resignation, long employerId) : base(name, cpf, email, phone, address)

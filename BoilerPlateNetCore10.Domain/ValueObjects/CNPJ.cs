@@ -45,6 +45,10 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             return cnpj.EndsWith(digito);
         }
 
+        internal CNPJ() 
+        { 
+        }
+
         public CNPJ(string number)
         {
             DomainExceptionValidation.When(!IsCNPJ(number) , InvalidCNPJErrorMessage);
@@ -52,7 +56,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             Number = number;
         }
 
-        public string Number { get; private set; }
+        public string Number { get; private set; } = "";
 
     }
 }

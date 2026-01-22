@@ -29,89 +29,48 @@ namespace BoilerPlateNetCore10.API.Controllers
         //[AllowAnonymous]
         public async Task<ActionResult<IEnumerable<EnterpriseDTO>>> Get()
         {
-            try
-            {
-                var enterpriseDTOs = await _enterpriseService.GetAllAsync();
-                return Ok(enterpriseDTOs);
-            }
-            catch (Exception ex)
-            {
-                return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-                //return ReportUnexpectedException(ex);
-            }
-        }
-        
+            var enterpriseDTOs = await _enterpriseService.GetAllAsync();
+            return Ok(enterpriseDTOs);
+        }        
 
         [HttpGet("{id}", Name = "GetEnterprise")]
         //[AllowAnonymous]
         public async Task<ActionResult<EnterpriseDTO>> Get(int id)
         {
-            try
-            {
-                var collectionItemDTO = await _enterpriseService.GetByIdAsync(id);
-                if (collectionItemDTO == null)
-                    return NotFound();
-                return Ok(collectionItemDTO);
-            }
-            catch (Exception ex)
-            {
-                return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-                //return ReportUnexpectedException(ex);
-            }
+            var enterpriseDTO = await _enterpriseService.GetByIdAsync(id);
+            if (enterpriseDTO == null)
+                return NotFound();
+            return Ok(enterpriseDTO);
         }
 
         [HttpPost]
         //[Authorize(Roles = "Administrator,Strong,Player")]
         public async Task<ActionResult<EnterpriseDTO>> Post([FromBody] EnterpriseDTO enterpriseDTO)
         {
-            try
-            {
-                if (enterpriseDTO == null)
-                    return BadRequest();
-                var addedEnterpriseDTO = await _enterpriseService.AddAsync(enterpriseDTO);
-                return new CreatedAtRouteResult("GetEnterprise", new { id = addedEnterpriseDTO.Id }, addedEnterpriseDTO);
-            }
-            catch (Exception ex)
-            {
-                return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-                //return ReportUnexpectedException(ex);
-            }
+            if (enterpriseDTO == null)
+                return BadRequest();
+            var addedEnterpriseDTO = await _enterpriseService.AddAsync(enterpriseDTO);
+            return new CreatedAtRouteResult("GetEnterprise", new { id = addedEnterpriseDTO.Id }, addedEnterpriseDTO);
         }
 
         [HttpPut("{id}")]
         //[Authorize(Roles = "Administrator,Strong,Player")]
         public async Task<ActionResult<EnterpriseDTO>> Put(int id, [FromBody] EnterpriseDTO enterpriseDTO)
         {
-            try
-            {
-                if (enterpriseDTO == null)
-                    return BadRequest();
-                if (enterpriseDTO.Id != id)
-                    return BadRequest();
-                await _enterpriseService.UpdateAsync(enterpriseDTO);
-                return Ok(enterpriseDTO);
-            }
-            catch (Exception ex)
-            {
-                return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-                //return ReportUnexpectedException(ex);
-            }
+            if (enterpriseDTO == null)
+                return BadRequest();
+            if (enterpriseDTO.Id != id)
+                return BadRequest();
+            await _enterpriseService.UpdateAsync(enterpriseDTO);
+            return Ok(enterpriseDTO);
         }
 
         [HttpDelete("{id}")]
         //[Authorize(Roles = "Administrator,Strong,Player")]
         public async Task<ActionResult> Delete(int id)
         {
-            try
-            {
-                await _enterpriseService.RemoveAsync(id);
-                return NoContent();
-            }
-            catch (Exception ex)
-            {
-                return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-                //return ReportUnexpectedException(ex);
-            }
+            await _enterpriseService.RemoveAsync(id);
+            return NoContent();
         }
 
         /*
