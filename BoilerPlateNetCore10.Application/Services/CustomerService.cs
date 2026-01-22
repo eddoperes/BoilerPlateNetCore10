@@ -8,14 +8,14 @@ using System;
 namespace BoilerPlateNetCore10.Application.Services
 {
 
-    public class CustomerService : CrudService<CustomerDTO, Person>, ICustomerService
+    public class CustomerService : CrudService<CustomerDTO, Customer>, ICustomerService
     {
 
-        private readonly IPersonRepository _personRepository;
+        private readonly ICustomerRepository _customerRepository;
 
-        public CustomerService(IPersonRepository personRepository) : base(personRepository)
+        public CustomerService(ICustomerRepository customerRepository) : base(customerRepository)
         {
-            _personRepository = personRepository ?? throw new ArgumentNullException(nameof(IPersonRepository));
+            _customerRepository = customerRepository ?? throw new ArgumentNullException(nameof(ICustomerRepository));
         }
 
     }

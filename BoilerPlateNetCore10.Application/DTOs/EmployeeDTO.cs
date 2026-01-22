@@ -16,7 +16,7 @@ namespace BoilerPlateNetCore10.Application.DTOs
 
         public DateTime? Resignation { get; set; }
 
-        public long EnterpriseId { get; set; }
+        public long EmployerId { get; set; }
 
     }
 }

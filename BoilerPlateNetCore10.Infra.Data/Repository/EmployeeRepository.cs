@@ -5,13 +5,13 @@ using BoilerPlateNetCore10.Infra.Data.Repository.Super;
 
 namespace BoilerPlateNetCore10.Infra.Data.Repository
 {
-    /*
-    public class PersonRepository : GenericRepository<Person>, IPersonRepository
+    
+    public class EmployeeRepository : GenericRepository<Employee>, IEmployeeRepository
     {
-        public PersonRepository(ApplicationDbContext context) : base(context)
+        public EmployeeRepository(ApplicationDbContext context) : base(context)
         {
         }
     }
-    */
+    
 }
 

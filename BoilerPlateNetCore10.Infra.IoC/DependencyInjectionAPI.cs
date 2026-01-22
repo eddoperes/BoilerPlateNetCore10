@@ -24,10 +24,11 @@ namespace BoilerPlateNetCore10.Infra.IoC
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();
 
             services.AddScoped<IEnterpriseRepository, EnterpriseRepository>();
-            //services.AddScoped<IPersonRepository, PersonRepository>();
+            services.AddScoped<ICustomerRepository, CustomerRepository>();
+            services.AddScoped<IEmployeeRepository, EmployeeRepository>();
 
-            //services.AddScoped<ICustomerService, CustomerService>();
-            //services.AddScoped<IEmployeeService, EmployeeService>();
+            services.AddScoped<ICustomerService, CustomerService>();
+            services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IEnterpriseService, EnterpriseService>();
 
             //services.AddScoped<IFileService, FileService>();

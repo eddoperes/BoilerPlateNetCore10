@@ -7,18 +7,18 @@ using System;
 
 namespace BoilerPlateNetCore10.Application.Services
 {
-    /*
-    public class EmployeeService : CrudService<EmployeeDTO, Person>, IEmployeeService
+    
+    public class EmployeeService : CrudService<EmployeeDTO, Employee>, IEmployeeService
     {
 
-        private readonly IPersonRepository _personRepository;
+        private readonly IEmployeeRepository _employeeRepository;
 
-        public EmployeeService(IPersonRepository personRepository) : base(personRepository)
+        public EmployeeService(IEmployeeRepository employeeRepository) : base(employeeRepository)
         {
-            _personRepository = personRepository ?? throw new ArgumentNullException(nameof(IPersonRepository));
+            _employeeRepository = employeeRepository ?? throw new ArgumentNullException(nameof(IEmployeeRepository));
         }
 
 
     }
-    */
+    
 }

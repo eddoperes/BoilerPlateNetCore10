@@ -73,21 +73,5 @@ namespace BoilerPlateNetCore10.API.Controllers
             return NoContent();
         }
 
-        /*
-        private ActionResult ReportUnexpectedException(Exception ex)
-        {
-            Log.Logger = _logger;
-            Log.Error(ex.Message);
-            var innerException = ex.InnerException;
-            while (innerException != null)
-            {
-                Log.Error(innerException.Message);
-                innerException = innerException.InnerException;
-            }
-            return Problem(statusCode: StatusCodes.Status500InternalServerError, detail: ex.Message);
-        }
-        */
-
-
     }
 }
