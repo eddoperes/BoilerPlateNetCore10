@@ -8,7 +8,7 @@ using BoilerPlateNetCore10.Test.Util;
 using ExpectedObjects;
 using Xunit.Abstractions;
 
-namespace BoilerPlateNetCore10.Test.Unit
+namespace BoilerPlateNetCore10.Test.Unit.Domain
 {
     public class EnterpriseTest
     {
@@ -41,7 +41,7 @@ namespace BoilerPlateNetCore10.Test.Unit
             string name = _faker.Company.CompanyName();
             CNPJ cnpj = new CNPJ(_faker.Company.Cnpj());
             Email email = new Email(_faker.Person.Email);
-            Phone phone = new Phone(_faker.Person.Phone.Replace("(","").Replace(")","").Replace(" ","").Replace("-","").Replace("+55",""));
+            Phone phone = new Phone(_faker.Phone.PhoneNumber("119########"));
             Address address = new Address(_faker.Address.StreetName(),
                                           _faker.Random.Int(100, 1000),
                                           _faker.Address.SecondaryAddress(),

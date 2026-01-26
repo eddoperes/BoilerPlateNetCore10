@@ -20,6 +20,13 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             DomainExceptionValidation.When(number == string.Empty, EmptyNumberErrorMessage);
             DomainExceptionValidation.When(!long.TryParse(number, out _), NumberNotNumericErrorMessage);
             DomainExceptionValidation.When(number.Length != 10 && number.Length != 11, NumberLenghtErrorMessage);
+
+            /*
+            if (int.Parse(number.Substring(0, 2)) < 11 || int.Parse(number.Substring(0, 2)) > 99) { 
+                number= "11" + number.Substring(2);
+            }
+            */
+
             DomainExceptionValidation.When(int.Parse(number.Substring(0, 2)) < 11 || int.Parse(number.Substring(0, 2)) > 99, InvalidDDDErrorMessage);
             //DomainExceptionValidation.When(number.Length == 11 && number[2] != '9', InvalidCellPhoneNumberErrorMessage);
 

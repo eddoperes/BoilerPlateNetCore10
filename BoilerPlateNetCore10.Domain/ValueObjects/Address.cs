@@ -1,5 +1,6 @@
 ﻿using BoilerPlateNetCore10.Domain.Validation;
 using System.Collections.Generic;
+using System.Diagnostics;
 
 namespace BoilerPlateNetCore10.Domain.ValueObjects
 {
@@ -19,7 +20,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             { "AC", "Acre" },
             { "AL", "Alagoas" },
             { "Ap", "Amapá" },
-            { "Am", "Amazonas" },
+            { "AM", "Amazonas" },
             { "BA", "Bahia"  },
             { "CE", "Ceará" },
             { "DF", "Distrito Federal" },
@@ -58,7 +59,17 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             DomainExceptionValidation.When(!long.TryParse(zipCode, out _), ZipCodeNotNumericErrorMessage);
             DomainExceptionValidation.When(zipCode.Length != 8, ZipCodeLenghtErrorMessage);
             DomainExceptionValidation.When(city == string.Empty, EmptyCityErrorMessage);
+
+            /*
+            if (!BrazilianStates.ContainsKey(state))
+            {
+                state = "state";
+            }
+            */
+
             DomainExceptionValidation.When(!BrazilianStates.ContainsKey(state), InvalidStateErrorMessage);
+
+            
 
             Street = street;
             Number = number;

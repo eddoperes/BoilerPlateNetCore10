@@ -8,7 +8,7 @@ using BoilerPlateNetCore10.Test.Util;
 using ExpectedObjects;
 using Xunit.Abstractions;
 
-namespace BoilerPlateNetCore10.Test.Unit
+namespace BoilerPlateNetCore10.Test.Unit.Domain
 {
     public class EmployeeTest
     {
@@ -41,7 +41,7 @@ namespace BoilerPlateNetCore10.Test.Unit
             string name = _faker.Person.FullName;
             CPF cpf = new CPF(_faker.Person.Cpf());
             Email email = new Email(_faker.Person.Email);
-            Phone phone = new Phone(_faker.Person.Phone.Replace("(", "").Replace(")", "").Replace(" ", "").Replace("-", "").Replace("+55", ""));
+            Phone phone = new Phone(_faker.Phone.PhoneNumber("119########"));
             Address address = new Address(_faker.Address.StreetName(),
                                           _faker.Random.Int(100, 1000),
                                           _faker.Address.SecondaryAddress(),
@@ -50,7 +50,7 @@ namespace BoilerPlateNetCore10.Test.Unit
                                           _faker.Address.City(),
                                           _faker.Address.StateAbbr());
             DateTime admission = _faker.Date.Past(500);
-            DateTime resignation = _faker.Date.Past(100);
+            DateTime resignation = admission.AddYears(2);
             long employerId = _faker.Random.Long(1, 1000);
 
             var expectedEmployee = new
