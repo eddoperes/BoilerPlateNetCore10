@@ -55,7 +55,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
             DomainExceptionValidation.When(number <= 0, NumberNotGreaterThanZeroErrorMessage);
             DomainExceptionValidation.When(neighborhood == string.Empty, EmptyNeighborhoodErrorMessage);
             DomainExceptionValidation.When(zipCode == string.Empty, EmptyZipCodeErrorMessage);
-            DomainExceptionValidation.When(!int.TryParse(zipCode, out _), ZipCodeNotNumericErrorMessage);
+            DomainExceptionValidation.When(!long.TryParse(zipCode, out _), ZipCodeNotNumericErrorMessage);
             DomainExceptionValidation.When(zipCode.Length != 8, ZipCodeLenghtErrorMessage);
             DomainExceptionValidation.When(city == string.Empty, EmptyCityErrorMessage);
             DomainExceptionValidation.When(!BrazilianStates.ContainsKey(state), InvalidStateErrorMessage);

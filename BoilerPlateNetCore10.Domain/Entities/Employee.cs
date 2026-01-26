@@ -32,7 +32,7 @@ namespace BoilerPlateNetCore10.Domain.Entities
         private void Validate(DateTime admission, DateTime? resignation)
         {
             if (resignation != null)            
-                DomainExceptionValidation.When(resignation > admission, InvalidResignationErrorMessage);                        
+                DomainExceptionValidation.When(resignation <= admission, InvalidResignationErrorMessage);                        
         }
 
         public DateTime Admission { get; private set; }
