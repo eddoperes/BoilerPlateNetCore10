@@ -6,7 +6,6 @@ using BoilerPlateNetCore10.Application.Interfaces;
 using BoilerPlateNetCore10.Application.Services;
 using BoilerPlateNetCore10.Domain.Entities;
 using BoilerPlateNetCore10.Domain.Interfaces;
-using BoilerPlateNetCore10.Domain.ValueObjects;
 using Moq;
 
 namespace BoilerPlateNetCore10.Test.Unit.Application

@@ -19,7 +19,7 @@ namespace BoilerPlateNetCore10.Domain.ValueObjects
         private static readonly Dictionary<string, string> BrazilianStates = new Dictionary<string, string>{
             { "AC", "Acre" },
             { "AL", "Alagoas" },
-            { "Ap", "Amapá" },
+            { "AP", "Amapá" },
             { "AM", "Amazonas" },
             { "BA", "Bahia"  },
             { "CE", "Ceará" },
