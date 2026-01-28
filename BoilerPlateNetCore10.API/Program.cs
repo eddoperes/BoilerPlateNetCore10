@@ -1,5 +1,8 @@
+
 using BoilerPlateNetCore10.API;
+//using BoilerPlateNetCore10.Infra.Data.Context;
 using BoilerPlateNetCore10.Infra.IoC;
+//using Microsoft.EntityFrameworkCore;
 using Microsoft.OpenApi;
 using Scalar.AspNetCore;
 using Serilog;
@@ -52,6 +55,16 @@ builder.Services.AddSwaggerGen(c =>
 
 var app = builder.Build();
 
+/*
+using (var scope = app.Services.CreateScope())
+{
+    var dbContext = scope.ServiceProvider.GetRequiredService<ApplicationDbContext>();
+
+    // Aplica qualquer migração pendente e cria o banco se não existir
+    dbContext.Database.Migrate();
+}
+*/
+
 app.UseExceptionHandler("/error");
 
 // Configure the HTTP request pipeline.
@@ -74,3 +87,6 @@ app.UseAuthorization();
 app.MapControllers();
 
 app.Run();
+
+
+

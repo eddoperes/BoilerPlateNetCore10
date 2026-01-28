@@ -18,7 +18,7 @@ namespace BoilerPlateNetCore10.Infra.IoC
 
             services.AddDbContext<ApplicationDbContext>(
                 options => options.UseSqlServer(configuration.GetConnectionString("DefaultConnection"),
-                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));
+                b => b.MigrationsAssembly(typeof(ApplicationDbContext).Assembly.FullName)));           
 
             //services.AddApiVersioning();
             //services.AddSingleton<IHttpContextAccessor, HttpContextAccessor>();

@@ -64,4 +64,7 @@ namespace BoilerPlateNetCore10.API
         }
 
     }
+
+    public partial class Program { }
+
 }

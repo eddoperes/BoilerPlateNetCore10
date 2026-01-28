@@ -5,15 +5,19 @@
     <ImplicitUsings>enable</ImplicitUsings>
     <Nullable>enable</Nullable>
     <IsPackable>false</IsPackable>
+    <PreserveCompilationContext>true</PreserveCompilationContext>
   </PropertyGroup>
 
   <ItemGroup>
     <PackageReference Include="Bogus" Version="35.6.5" />
     <PackageReference Include="coverlet.collector" Version="6.0.4" />
     <PackageReference Include="ExpectedObjects" Version="3.5.4" />
+    <PackageReference Include="Microsoft.AspNetCore.Mvc.Testing" Version="10.0.2" />
     <PackageReference Include="Microsoft.NET.Test.Sdk" Version="17.14.1" />
     <PackageReference Include="Moq" Version="4.20.72" />
-    <PackageReference Include="xunit" Version="2.9.3" />
+    <PackageReference Include="Testcontainers" Version="4.10.0" />
+    <PackageReference Include="Testcontainers.MsSql" Version="4.10.0" />
+    <PackageReference Include="xunit" Version="2.9.2" />
     <PackageReference Include="xunit.runner.visualstudio" Version="3.1.4" />
   </ItemGroup>
 
@@ -22,6 +26,7 @@
   </ItemGroup>
 
   <ItemGroup>
+    <ProjectReference Include="..\BoilerPlateNetCore10.API\BoilerPlateNetCore10.API.csproj" />
     <ProjectReference Include="..\BoilerPlateNetCore10.Application\BoilerPlateNetCore10.Application.csproj" />
     <ProjectReference Include="..\BoilerPlateNetCore10.Domain\BoilerPlateNetCore10.Domain.csproj" />
   </ItemGroup>
