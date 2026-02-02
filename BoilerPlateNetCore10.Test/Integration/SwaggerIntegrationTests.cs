@@ -22,12 +22,21 @@ namespace BoilerPlateNetCore10.Test.Integration
         {
             // Arrange and Act
             var response = await _httpClient.GetAsync("/swagger/index.html");
-            // 
-            //var response = await _httpClient.SendAsync(request);
             // Assert
             response.EnsureSuccessStatusCode();
             var content = await response.Content.ReadAsStringAsync();
             Assert.Contains("Swagger UI", content);
+        }
+
+        [Fact]
+        public async Task GetCustomer_Endpoint_Returns_Success()
+        {
+            // Arrange and Act
+            var response = await _httpClient.GetAsync("/api/customer");
+            // Assert
+            response.EnsureSuccessStatusCode();
+            var content = await response.Content.ReadAsStringAsync();
+            //Assert.Contains("Swagger UI", content);
         }
 
 

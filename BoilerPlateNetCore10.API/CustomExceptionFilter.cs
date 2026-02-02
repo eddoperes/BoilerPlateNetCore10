@@ -3,6 +3,7 @@ using Microsoft.AspNetCore.Mvc;
 using Microsoft.AspNetCore.Mvc.Filters;
 using System.Net;
 using Serilog;
+using Microsoft.EntityFrameworkCore.Metadata.Internal;
 
 namespace BoilerPlateNetCore10.API
 {
@@ -65,6 +66,7 @@ namespace BoilerPlateNetCore10.API
 
     }
 
-    public partial class Program { }
+    public partial class Program {            
+    }
 
 }
