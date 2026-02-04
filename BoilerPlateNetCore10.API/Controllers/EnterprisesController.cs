@@ -13,13 +13,13 @@ namespace BoilerPlateNetCore10.API.Controllers
     //[Authorize]
     //[Route("api/[controller]/v{version:apiVersion}")]
     [Route("api/[controller]")]
-    public class EnterpriseController : Controller
+    public class EnterprisesController : Controller
     {
 
         private readonly IEnterpriseService _enterpriseService;
         //private readonly Serilog.ILogger _logger;
 
-        public EnterpriseController(IEnterpriseService enterpriseService)
+        public EnterprisesController(IEnterpriseService enterpriseService)
         {
             _enterpriseService = enterpriseService;
             //_logger = logger;

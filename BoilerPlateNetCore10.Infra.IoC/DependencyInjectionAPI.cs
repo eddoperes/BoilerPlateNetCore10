@@ -26,13 +26,15 @@ namespace BoilerPlateNetCore10.Infra.IoC
             services.AddScoped<IEnterpriseRepository, EnterpriseRepository>();
             services.AddScoped<ICustomerRepository, CustomerRepository>();
             services.AddScoped<IEmployeeRepository, EmployeeRepository>();
+            services.AddScoped<IUserRepository, UserRepository>();
 
             services.AddScoped<ICustomerService, CustomerService>();
             services.AddScoped<IEmployeeService, EmployeeService>();
             services.AddScoped<IEnterpriseService, EnterpriseService>();
+            services.AddScoped<IUserService, UserService>();
 
             //services.AddScoped<IFileService, FileService>();
-            //services.AddScoped<ILoginService, LoginService>();
+            services.AddScoped<ILoginService, LoginService>();
             
             //services.AddAutoMapper(cfg => { cfg.AddProfile<DomainToDTOMappingProfile>(); });
 

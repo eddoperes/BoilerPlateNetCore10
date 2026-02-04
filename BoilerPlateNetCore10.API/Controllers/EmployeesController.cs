@@ -11,13 +11,13 @@ namespace BoilerPlateNetCore10.API.Controllers
     //[Route("api/[controller]/v{version:apiVersion}")]
     [Route("api/[controller]")]
 
-    public class EmployeeController : Controller
+    public class EmployeesController : Controller
     {
 
         private readonly IEmployeeService _employeeService;
         //private readonly Serilog.ILogger _logger;
 
-        public EmployeeController(IEmployeeService employeeService)
+        public EmployeesController(IEmployeeService employeeService)
         {
             _employeeService = employeeService;
             //_logger = logger;
