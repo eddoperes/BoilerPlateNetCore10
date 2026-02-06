@@ -19,13 +19,13 @@ namespace BoilerPlateNetCore10.Infra.Data.Repository.Super
 
         public async Task<IEnumerable<T>> GetAllAsync()
         {
-            var items = await _dataSet.ToListAsync();
+            var items = await _dataSet.OrderBy(_ => _.Id).ToListAsync();
             return items;
         }
 
         public async Task<T?> GetByIdAsync(long id)
         {
-            return await _dataSet.SingleOrDefaultAsync(c => c.Id == id);
+            return await _dataSet.SingleOrDefaultAsync(_ => _.Id == id);
         }
 
         public async Task<T> CreateAsync(T item)
@@ -44,7 +44,7 @@ namespace BoilerPlateNetCore10.Infra.Data.Repository.Super
 
         public async Task RemoveAsync(long id)
         {
-            var item = _dataSet.SingleOrDefault(p => p.Id.Equals(id));
+            var item = _dataSet.SingleOrDefault(_ => _.Id.Equals(id));
             if (item != null)
             {
                 _applicationDbContext.Remove(item);
@@ -54,7 +54,7 @@ namespace BoilerPlateNetCore10.Infra.Data.Repository.Super
 
         public bool Exists(long id)
         {
-            return _dataSet.Any(i => i.Id.Equals(id));
+            return _dataSet.Any(_ => _.Id.Equals(id));
         }
     }
 
