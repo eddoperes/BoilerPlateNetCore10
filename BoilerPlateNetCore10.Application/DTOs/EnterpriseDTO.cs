@@ -1,5 +1,4 @@
 ﻿using BoilerPlateNetCore10.Application.DTOs.ValueObjects;
-using BoilerPlateNetCore10.Domain.ValueObjects;
 
 namespace BoilerPlateNetCore10.Application.DTOs
 {
